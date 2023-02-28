@@ -18,7 +18,7 @@ public class MyWebSocketMessageHandler implements MessageHandler
     {
         if (textMessage.direction() == Direction.CLIENT_TO_SERVER)
         {
-            String newMessage = textMessage.payload().replace(matchWith, replaceWith);
+            String newMessage = textMessage.payload().replaceAll(matchWith, replaceWith);
 
             return continueWith(newMessage);
         }
